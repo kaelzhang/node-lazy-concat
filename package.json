@@ -1,7 +1,7 @@
 {
   "name": "lazy-concat",
   "version": "1.0.0",
-  "description": "lazy-concat",
+  "description": "Lazily concat two arrays and exclude duplicate items at the joint, especially for sequential arrays.",
   "main": "lib/index.js",
   "module": "src/index.js",
   "scripts": {
@@ -20,7 +20,13 @@
     "url": "git://github.com/kaelzhang/node-lazy-concat.git"
   },
   "keywords": [
-    "lazy-concat"
+    "lazy-concat",
+    "concat",
+    "unique",
+    "union",
+    "array",
+    "duplicate",
+    "joint"
   ],
   "engines": {
     "node": ">=4"
@@ -42,15 +48,9 @@
   "devDependencies": {
     "ava": "^0.16.0",
     "babel-cli": "^6.16.0",
-    "babel-plugin-transform-async-to-generator": "^6.22.0",
     "babel-plugin-syntax-trailing-function-commas": "^6.13.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
-    "babel-plugin-transform-class-properties": "^6.16.0",
-    "babel-plugin-transform-exponentiation-operator": "^6.8.0",
-    "babel-plugin-transform-inline-environment-variables": "^6.8.0",
-    "babel-plugin-transform-object-rest-spread": "^6.16.0",
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
-    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-register": "^6.24.1",
     "nyc": "^11.1.0",
     "codecov": "^2.3.0",
@@ -60,6 +60,6 @@
     "rollup-plugin-node-resolve": "^3.0.0"
   },
   "dependencies": {
-    "babel-runtime": "^6.23.0"
+    "lodash.findlastindex": "^4.6.0"
   }
 }

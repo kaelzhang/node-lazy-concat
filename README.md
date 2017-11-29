@@ -15,7 +15,7 @@
 
 # lazy-concat
 
-<!-- description -->
+Lazily concat two or more arrays, especially for sequential arrays.
 
 ## Install
 
@@ -26,8 +26,48 @@ $ npm install lazy-concat
 ## Usage
 
 ```js
-import lazy_concat from 'lazy-concat'
+import concat from 'lazy-concat'
+
+concat([1, 2, 3], [2, 3, 9], 9, 10)
+// 2 of the second array matches the second position of the first array
+// concat([1, 2, 3], [2, 3, 9]) -> [1, 2, 3, 9]
+// 9 matches the last item of the previously concat item
+// -> [1, 2, 3, 9]
+// 10 does not match,
+// so the result is [1, 2, 3, 9, 10]
+
+const concat2 = concat.factory({
+  equal: (a, b) => a.i = b.i
+})
+
+concat2([{i: 1}, {i: 2}], [{i: 2}, {i: 3}])  
+// [{i: 1}, {i: 2}, {i: 3}]
+
+concat([1, 2, 3], [1, 9])
+// 1 of the second array matches the first item of the first array,
+// but the match is too deep
+// which is deeper than the length of the second array.
+// So the match will be rejected.
+// And the result is `[1, 2, 3, 1, 9]`
+
+concat(null, [1, 2])  // it will throw
 ```
+
+## concat(...items)
+
+- **items** `Array<any>` the first item should not be `null` or `undefined`, or it will throw an error.
+
+Returns `Array`
+
+## concat.factory({equal})
+
+- **equal** `Function` the method to match items, by default:
+
+```js
+const equal = (a, b) => a === b
+```
+
+Returns `Function` the configured `concat` function.
 
 ## License
 
