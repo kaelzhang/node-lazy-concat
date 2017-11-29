@@ -1,6 +1,6 @@
 {
   "name": "lazy-concat",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Lazily concat two arrays and exclude duplicate items at the joint, especially for sequential arrays.",
   "main": "lib/index.js",
   "module": "src/index.js",
@@ -58,8 +58,5 @@
     "rollup-plugin-babel": "^3.0.2",
     "rollup-plugin-commonjs": "^8.2.6",
     "rollup-plugin-node-resolve": "^3.0.0"
-  },
-  "dependencies": {
-    "lodash.findlastindex": "^4.6.0"
   }
 }
