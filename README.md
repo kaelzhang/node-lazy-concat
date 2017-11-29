@@ -15,7 +15,7 @@
 
 # lazy-concat
 
-Lazily concat two or more arrays, especially for sequential arrays.
+Lazily concat two arrays and exclude duplicate items at the joint, especially for sequential arrays.
 
 ## Install
 

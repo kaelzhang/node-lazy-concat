@@ -1,6 +1,6 @@
 {
   "name": "lazy-concat",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Lazily concat two arrays and exclude duplicate items at the joint, especially for sequential arrays.",
   "main": "lib/index.js",
   "module": "src/index.js",
