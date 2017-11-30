@@ -84,6 +84,13 @@ const map = arr => arr.map(x => ({a: x}))
     ],
     map([1, 2, 3, 5]),
     (a, b) => a.a === b.a
+  ],
+  [
+    'single item',
+    [
+      [1, 2, 3]
+    ],
+    [1, 2, 3]
   ]
 
 ].forEach(([d, args, expect, equal]) => {
